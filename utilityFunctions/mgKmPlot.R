@@ -6,7 +6,7 @@ mgKmPlot <- function(dat, mg, subset=NULL){
   dat$mg <- dat[, mg]
   dat$mgGrp <- ifelse(dat$mg > median(dat$mg), "high", "low")
   
-  coxFit <- coxph(Surv(osYears, osStatus) ~ mg, data=dat)
+  coxFit <- coxph(Surv(osYears, osStatus) ~ factor(mgGrp), data=dat)
   logtestPval <- summary(coxFit)$logtest["pvalue"]
   fit <- survfit(Surv(osYears, osStatus) ~ factor(mgGrp), data=dat)
   
