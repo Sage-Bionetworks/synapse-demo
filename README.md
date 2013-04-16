@@ -1,4 +1,4 @@
 synapse-demo
 ============
 
-Synapse (www.synapse.org) demo script and supporting functions
+demo script and supporting functions for www.synapse.org
