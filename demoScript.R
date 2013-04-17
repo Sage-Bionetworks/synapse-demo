@@ -25,15 +25,15 @@ ovImputedAll <- allDatEnt$objects$ovImputedAll
 mb <- mbImputedAll
 mb$osYears <- mbSurv[, 1] / 365
 mb$osStatus <- mbSurv[, 2]
-mb$osYears[ mb$osYears>15 ] <- 15
-mb$osStatus[ mb$osYears>15 ] <- 0
+mb$osYears[ mb$osYears >= 15 ] <- 15
+mb$osStatus[ mb$osYears >= 15 ] <- 0
 mb$chr8q24.3 <- mb$puf60
 mb$tripleNeg <- mbClin$tripleNeg
 ov <- ovImputedAll
 ov$osYears <- ovSurv[, 1] / 365
 ov$osStatus <- ovSurv[, 2]
-ov$osYears[ ov$osYears>15 ] <- 15
-ov$osStatus[ ov$osYears>15 ] <- 0
+ov$osYears[ ov$osYears >= 15 ] <- 15
+ov$osStatus[ ov$osYears >= 15 ] <- 0
 ov$chr8q24.3 <- ov$puf60
 ov$tripleNeg <- ovClin$tripleNeg
 
