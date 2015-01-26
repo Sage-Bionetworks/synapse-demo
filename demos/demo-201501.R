@@ -25,19 +25,19 @@ tcgaSub <- tcgaSub[ these, ]
 crc <- crc[, these]
 
 ## SPECIFICALLY INTERESTED IN PIK3CA
-plotDF <- data.frame(expression=as.numeric(crc["PIK3CA",]), subtype=tcgaSub$CMS4network_plus_classifier_in_noncore_samples)
+plotDF <- data.frame(expression=as.numeric(crc["EDN2",]), subtype=tcgaSub$CMS4network_plus_classifier_in_noncore_samples)
 
 ## PLOT EXPRESSION VALUES BY SUBTYPE
 p <- ggplot(data=plotDF, aes(x=expression, fill=factor(subtype))) + 
   geom_density(alpha=0.3)
 p
-filePath <- file.path(tempdir(), "pik3ca-by-subtype.png")
+filePath <- file.path(tempdir(), "edn2-by-subtype.png")
 png(filePath, height=400, width=600)
 show(p)
 dev.off()
 
 f <- synStore(File(path=filePath, parentId=folderId),
-              activityName="PIK3CA in CRC Subtypes",
+              activityName="EDN2 in CRC Subtypes",
               used=list(
                 list(url=thisCode, name=basename(thisCode), wasExecuted=T),
                 list(entity=subSyn, wasExecuted=F),

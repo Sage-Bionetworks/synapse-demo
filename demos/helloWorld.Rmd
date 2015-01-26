@@ -1,0 +1,10 @@
+# Hello World Title
+### Author: Brian M. Bot
+
+This is a narrative with inline code execution to tell me that pi is equal to `r pi`. And a plot to show a simple function.
+
+```{r}
+x <- 1:100
+y <- log(x)/x
+plot(x,y)
+```
