@@ -24,7 +24,7 @@ these <- intersect(colnames(crc), rownames(tcgaSub))
 tcgaSub <- tcgaSub[ these, ]
 crc <- crc[, these]
 
-## SPECIFICALLY INTERESTED IN PIK3CA
+## SPECIFICALLY INTERESTED IN EDN2
 plotDF <- data.frame(expression=as.numeric(crc["EDN2",]), subtype=tcgaSub$CMS4network_plus_classifier_in_noncore_samples)
 
 ## PLOT EXPRESSION VALUES BY SUBTYPE
